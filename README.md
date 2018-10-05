@@ -2,15 +2,30 @@
 
 ![An adder](https://upload.wikimedia.org/wikipedia/commons/2/28/Loch_Shin_adder.JPG)
 
-## Download
+## Download 
+
+1. Use the _fork link_ from the class website to create your private clone of the starter code.
+
+2. Do `git clone https://github.com/ucsd-cse131-fa18/01-adder-XXX` where `XXX` is your private repo.
+
+3. Link your clone to the "upstream" to get any updates
 
 ```
-$ git clone https://github.com/ucsd-cse131/01-adder.git
-$ cd 01-adder/
+$ make upstream
 ```
 
-In this assignment you'll implement a compiler for a small language called
-Adder (because it primarily adds things).
+after this you can get "updates" (in case we modify the starter code), with 
+
+```
+$ make update 
+```
+
+4. Save (and submit) your work with: 
+
+```
+$ git commit -a -m MESSAGE 
+$ git push 
+```
 
 ## The Adder Language
 
@@ -304,7 +319,7 @@ a look at `tests/tests.json` for an example):
 
 ```
 { "name"   : NAME
-, "code"   : "file" | PROGRAM 
+, "file"   : FILE
 , "result" : { "value" : RESULT } | { "failure" : ERROR } 
 }
 ```
@@ -312,9 +327,8 @@ a look at `tests/tests.json` for an example):
 Each test is a [JSON](https://www.json.org/) object with three members:
 
 1. `NAME` is the string that **uniquely** identifies the test
-2. `code` is either the string `"file"` or the program code itself. If you put
-   `"file"` in this value, the actual test input should be in
-   `tests/input/file.adder`.
+2. `FILE` is the file of the program code. If you put `"file"` in this value,
+   the actual test input should be in `tests/input/file.adder`.
 3. The value of `"result"` is an object that contains the expected outcome of this test:
    * In the first case, `RESULT` is a single string containing the correct output
      (of compiling, linking and running the test).
