@@ -27,6 +27,9 @@ $ git commit -a -m MESSAGE
 $ git push 
 ```
 
+In this assignment you'll implement a compiler for a small language called
+Adder (because it primarily adds things).
+
 ## The Adder Language
 
 In each of the next several assignments, we'll introduce a language that we'll
