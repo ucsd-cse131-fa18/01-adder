@@ -1,16 +1,34 @@
 # Adder
 
-![An adder](https://upload.wikimedia.org/wikipedia/commons/2/28/Loch_Shin_adder.JPG)
-
-## Download
-
-```
-$ git clone https://github.com/ucsd-cse131/01-adder.git
-$ cd 01-adder/
-```
-
 In this assignment you'll implement a compiler for a small language called
 Adder (because it primarily adds things).
+
+![An adder](https://upload.wikimedia.org/wikipedia/commons/2/28/Loch_Shin_adder.JPG)
+
+## Download 
+
+1. Use the _fork link_ from the class website to create your private clone of the starter code.
+
+2. Do `git clone https://github.com/ucsd-cse131-fa18/00-warmup-XXX` where `XXX` is your private repo.
+
+3. Link your clone to the "upstream" to get any updates
+
+```
+$ make upstream
+```
+
+after this you can get "updates" (in case we modify the starter code), with 
+
+```
+$ make update 
+```
+
+4. Save (and submit) your work with: 
+
+```
+$ git commit -a -m MESSAGE 
+$ git push 
+```
 
 ## The Adder Language
 
@@ -392,27 +410,19 @@ The creators of the **5 hardest tests** get **5%** of total points as **extra cr
 
 * That is, the **harder** a test, the **higher** its score.
 
-### Turnin
 
-Before submitting your code, you have to 
-fill [this form](https://goo.gl/forms/x5hm2FlSdxsmTYav1) 
-to register your groups (you have to do this for every assignment). 
-We will use this form to match your ieng account 
-username to your student id, so you **must fill it** 
-even if you have worked on the assignment individually.
+## Submission Instructions
 
-To submit your code do:
+Before submitting your code, you have to fill [this form](https://goo.gl/forms/3KBuBTilmvMKFD223)
+to register your groups. We will use this form to match your 
+github account username to your student id, so you **must** 
+fill it even if you have worked on the assignment individually.
 
+To submit your code, just do:
+
+```bash
+$ make turnin 
 ```
-make turnin
-```
 
-`turnin` will provide you with a confirmation of the 
-submission process; make sure that the size of the 
-file indicated by `turnin` matches the size of your file. 
-See the ACS Web page on [turnin](https://acms.ucsd.edu/info/turnin.html) 
-for more information on the operation of the program.
-
-If this is not the first time submitting this assignment, 
-make sure you remove old copies of `01-adder.tgz` left in 
-this directory.
+This will simply do a `git commit` followed by a `git push` to send us your code.
+**We will use the _most recent commit_ of your code (on `master` branch) as your submission.**

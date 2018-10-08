@@ -1,6 +1,6 @@
 ######################################################
-
-COURSE=cs131w
+COURSE=cs131f
+ORG=ucsd-cse131-fa18
 ASGN=01
 COMPILER=adder
 EXT=adder
@@ -50,10 +50,12 @@ distclean: clean
 tags:
 	hasktags -x -c lib/
 
-zip:
-	tar -zcvf ../$(ASGN)-$(COMPILER).tgz --exclude .git --exclude .stack-work ../$(ASGN)-$(COMPILER)
+turnin: 
+	git commit -a -m "turnin"
+	git push origin master
 
-turnin: distclean
-	tar -zcvf ../$(ASGN)-$(COMPILER).tgz --exclude .git --exclude .stack-work ../$(ASGN)-$(COMPILER)
-	mv ../$(ASGN)-$(COMPILER).tgz .
-	turnin -c $(COURSE) -p $(ASGN) ./$(ASGN)-$(COMPILER).tgz
+upstream:
+	git remote add upstream git@github.com:$(ORG)/$(ASGN)-$(COMPILER).git
+
+update:
+	git pull upstream master
